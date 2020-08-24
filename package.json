@@ -1,9 +1,9 @@
 {
-  "name": "gatsby-starter-default",
+  "name": "career-m",
   "private": true,
-  "description": "A simple starter to get up and developing quickly with Gatsby",
+  "description": "corporate site",
   "version": "0.1.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "author": "9631kunn",
   "dependencies": {
     "gatsby": "^2.24.47",
     "gatsby-image": "^2.4.16",
@@ -16,7 +16,8 @@
     "prop-types": "^15.7.2",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
-    "react-helmet": "^6.1.0"
+    "react-helmet": "^6.1.0",
+    "styled-components": "^5.1.1"
   },
   "devDependencies": {
     "prettier": "2.0.5"
