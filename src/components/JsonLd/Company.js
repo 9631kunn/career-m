@@ -2,9 +2,9 @@ import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import Helmet from "react-helmet"
 
-const PageJson = () => {
+const CompanyJson = () => {
   const data = useStaticQuery(graphql`
-    query SiteMetaQuery {
+    query CompanyMetaQuery {
       site {
         siteMetadata {
           siteUrl
@@ -84,4 +84,4 @@ const PageJson = () => {
   )
 }
 
-export default PageJson
+export default CompanyJson

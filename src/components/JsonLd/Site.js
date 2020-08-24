@@ -1,17 +1,53 @@
-// {
-//   "@context":"http://schema.org",
-//   "@type":"website",
-//   "name":"サイト名",
-//   "inLanguage":"jp", //ウェブサイトの言語
-//   "publisher": {
-//   "@type": "Organization",
-//   "name": "ウェブサイトの運営会社",
-//   "logo": {
-//       "@type": "ImageObject",
-//       "url": "ロゴ画像のURL"
-//   }},
-//   "copyrightYear":"2019-01-02T10:50:37+0000",//コピーライトの日付
-//   "headline":"ページのタイトル",
-//   "description":"現在表示されているページの概略",
-//   "url":"現在表示されているページURL"
-// }
+import React from "react"
+import { useStaticQuery, graphql } from "gatsby"
+import Helmet from "react-helmet"
+
+const SiteJson = () => {
+  const data = useStaticQuery(graphql`
+    query SiteMetaQuery {
+      site {
+        siteMetadata {
+          title
+          siteUrl
+          description
+          companyName
+          copyrightYear
+        }
+      }
+    }
+  `)
+  const {
+    title,
+    siteUrl,
+    description,
+    companyName,
+    copyrightYear
+  } = data.site.siteMetadata
+
+  const json = {
+    "@context": "http://schema.org",
+    "@type": "website",
+    "name": title,
+    "inLanguage": "jp",
+    "publisher": {
+      "@type": "Organization",
+      "name": companyName,
+      // "logo": {
+      //   "@type": "ImageObject",
+      //   "url": `${siteUrl}/assets/logo.png`,
+      // }
+    },
+    "copyrightYear": copyrightYear,//コピーライトの日付
+    "headline": title,
+    "description": description,
+    "url": siteUrl
+  }
+
+  return (
+    <Helmet>
+      <script type="application/ld+json">{JSON.stringify(json)}</script>
+    </Helmet>
+  )
+}
+
+export default SiteJson
