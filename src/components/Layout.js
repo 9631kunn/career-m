@@ -7,7 +7,10 @@ import SiteJson from "./JsonLd/Site"
 import Header from "./Header"
 import Footer from "./Footer"
 
-const Layout = ({ children }) => {
+import { ThemeProvider } from "styled-components"
+import theme from "../styles/theme"
+
+const Layout = ({ children, location }) => {
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
       site {
@@ -18,14 +21,15 @@ const Layout = ({ children }) => {
     }
   `)
 
+
   return (
-    <>
+    <ThemeProvider theme={theme}>
       <CompanyJson />
       <SiteJson />
-      <Header siteTitle={data.site.siteMetadata.title} />
+      <Header location={location} siteTitle={data.site.siteMetadata.title} />
       <main>{children}</main>
       <Footer />
-    </>
+    </ThemeProvider>
   )
 }
 

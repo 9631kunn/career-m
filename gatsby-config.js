@@ -16,6 +16,7 @@ module.exports = {
     addressCountry: "JP",
     copyrightYear: "2020-08-24T00:00:00+0000"
   },
+  pathPrefix: `/`,
   plugins: [
     `gatsby-plugin-react-helmet`,
     {
