@@ -1,8 +1,19 @@
 module.exports = {
   siteMetadata: {
-    title: `キャリア未来図`,
-    description: `description from gatsby-config`,
-    author: `@9631kunn`,
+    title: "キャリア未来図",
+    siteUrl: "https://hoge.com",
+    description: "description from gatsby-config",
+    // author: "@twitter",
+    companyName: "キャリア未来図",
+    founder: "", // 創業者名
+    foundingDate: "", // 設立日
+    telephone: "", // 電話番号（先頭に"+81-"）
+    faxNumber: "", // FAX番号（先頭に"+81-"）
+    addressLocality: "", // 市町村区
+    addressRegion: "", // 都道府県
+    postalCode: "", // 郵便番号
+    streetAddress: "", // 番地
+    addressCountry: "JP",
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
