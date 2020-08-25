@@ -5,6 +5,8 @@ import PropTypes from "prop-types"
 import Image from "./Image"
 
 import styled, { keyframes } from "styled-components"
+import "typeface-josefin-sans";
+
 
 const Header = ({ location, siteTitle }) => {
 
@@ -79,7 +81,6 @@ const Header = ({ location, siteTitle }) => {
         }
         span{
           font: 12px ${props => props.theme.fontEn};
-          /* text-transform: uppercase; */
         }
       }
     }
