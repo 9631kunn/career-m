@@ -44,12 +44,12 @@ const Header = ({ location, siteTitle }) => {
     justify-content: space-between;
     height: 100%;
     margin: auto;
-    max-width: 1024px;
+    max-width: 1200px;
     padding: 0 10px;
     h1, h3{
       height: 26px;
       width: 186px;
-      @media(min-width: ${props => props.theme.media.l}){
+      @media(min-width: ${props => props.theme.media.m}){
         height: 30px;
         width: 214px;
       }

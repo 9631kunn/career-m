@@ -2,7 +2,7 @@ const variables = {
   media: {
     s: "480px",
     m: "768px",
-    l: "1024px"
+    l: "1200px"
   },
   color: {
     main: "#F49829",

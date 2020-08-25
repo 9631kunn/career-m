@@ -7,8 +7,9 @@ import SiteJson from "./JsonLd/Site"
 import Header from "./Header"
 import Footer from "./Footer"
 
-import { ThemeProvider } from "styled-components"
+import styled, { ThemeProvider } from "styled-components"
 import theme from "../styles/theme"
+import Global from "../styles/global"
 
 const Layout = ({ children, location }) => {
   const data = useStaticQuery(graphql`
@@ -21,13 +22,23 @@ const Layout = ({ children, location }) => {
     }
   `)
 
+  const Main = styled.main`
+    background: #ececec;
+    margin: auto;
+    max-width: 1200px;
+    @media (min-width: ${props => props.theme.media.l}){
+      border-inline-start: 2px solid #ececec;
+      border-inline-end: 2px solid #ececec;
+    }
+  `
 
   return (
     <ThemeProvider theme={theme}>
+      <Global />
       <CompanyJson />
       <SiteJson />
       <Header location={location} siteTitle={data.site.siteMetadata.title} />
-      <main>{children}</main>
+      <Main>{children}</Main>
       <Footer />
     </ThemeProvider>
   )
