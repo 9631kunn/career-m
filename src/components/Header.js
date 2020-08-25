@@ -3,23 +3,15 @@ import { Link } from "gatsby"
 import PropTypes from "prop-types"
 
 import Image from "./Image"
+import HeaderMenu from "./HeaderMenu"
 
 import styled, { keyframes } from "styled-components"
-import "typeface-josefin-sans";
 
 
 const Header = ({ location, siteTitle }) => {
 
   const root = `${__PATH_PREFIX__}/`;
   const Logo = <Image filename="logo.png" className="logo" alt={siteTitle + "ロゴ"} />
-
-  const menus = [
-    { ttl: "事業紹介", sub: "Our Works", link: "/test1" },
-    { ttl: "人材をお探しの企業様へ", sub: "Recruiter", link: "/test2" },
-    { ttl: "求人", sub: "Recruitment", link: "/test3" },
-    { ttl: "会社情報", sub: "About us", link: "/test4" },
-    { ttl: "お問い合わせ", sub: "Get in touch", link: "/test5" },
-  ]
 
   const gradAnimation = keyframes`
     0%{ background-position:0% 50% }
@@ -34,8 +26,8 @@ const Header = ({ location, siteTitle }) => {
     }
     position: relative;
     &::after{
-      animation: ${gradAnimation} 5s infinite;
-      background-image: linear-gradient(to right, ${props => props.theme.color.main} 0%, ${props => props.theme.color.sub} 100%);
+      animation: ${gradAnimation} 3s infinite;
+      background-image: linear-gradient(-150deg, ${props => props.theme.color.main} 80%, ${props => props.theme.color.sub} 100%);
       background-size: 600% 600%;
       bottom: 0;
       content: "";
@@ -63,28 +55,7 @@ const Header = ({ location, siteTitle }) => {
       }
     }
   `
-  const Menu = styled.ul`
-    list-style: none;
-    li{
-      display: inline-block;
-      &:not(:last-child){
-        margin-inline-end: 30px;
-      }
-      a{
-        color: inherit;
-        display: grid;
-        text-align: center;
-        text-decoration: none;
-        p{
-          font-size: 14px;
-          font-weight: bold;
-        }
-        span{
-          font: 12px ${props => props.theme.fontEn};
-        }
-      }
-    }
-  `
+
 
   return (
     <Wrap>
@@ -93,18 +64,7 @@ const Header = ({ location, siteTitle }) => {
           ? <h1><Link to="/">{Logo}</Link></h1>
           : <h3><Link to="/">{Logo}</Link></h3>
         }
-        <nav>
-          <Menu>
-            {menus.map(menu =>
-              <li key={menu.link}>
-                <Link to={menu.link}>
-                  <p>{menu.ttl}</p>
-                  <span>{menu.sub}</span>
-                </Link>
-              </li>
-            )}
-          </Menu>
-        </nav>
+        <HeaderMenu />
       </Container>
     </Wrap>
   )
