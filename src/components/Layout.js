@@ -1,6 +1,7 @@
 import React from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
+import Helmet from "react-helmet"
 
 import CompanyJson from "./JsonLd/Company"
 import SiteJson from "./JsonLd/Site"
@@ -24,6 +25,9 @@ const Layout = ({ children, location }) => {
 
   return (
     <ThemeProvider theme={theme}>
+      <Helmet>
+        <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400&display=swap" rel="stylesheet" />
+      </Helmet>
       <CompanyJson />
       <SiteJson />
       <Header location={location} siteTitle={data.site.siteMetadata.title} />

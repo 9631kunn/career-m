@@ -33,6 +33,8 @@ dd {
 
 /* Set core root defaults */
 html {
+  color: #444;
+  font-family: 'Yu Mincho Light','YuMincho','Yu Mincho','游明朝体',sans-serif;
   scroll-behavior: smooth;
 }
 
