@@ -20,6 +20,9 @@ const News = () => {
     }
   `)
 
+  const mainOp = props => props.theme.color.mainOp
+  const fontGo = props => props.theme.fontGo
+
   const NewsWrap = styled.ul`
     list-style: none;
     li {
@@ -29,10 +32,10 @@ const News = () => {
       grid-template-columns: 80px 1fr;
       margin-block-end: 15px;
       time {
-        background: ${props => props.theme.color.mainOp};
+        background: ${mainOp};
         border-radius: 3px;
         color: #fff;
-        font: 0.9em ${props => props.theme.fontGo};
+        font: 0.9em ${fontGo};
         height: 20px;
         text-align: center;
       }

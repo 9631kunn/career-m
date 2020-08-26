@@ -5,8 +5,12 @@ import Image from "../Image"
 import styled, { keyframes } from "styled-components"
 
 const Hero = () => {
+  const gapY = props => props.theme.gapY
+  const mediaL = props => props.theme.media.l
+  const mediaS = props => props.theme.media.s
+
   const Wrap = styled.section`
-    padding-block-end: ${props => props.theme.gapY};
+    padding-block-end: ${gapY};
     position: relative;
     .hero {
       img {
@@ -22,10 +26,10 @@ const Hero = () => {
   const Catch = styled.h2`
     animation: ${fadeIn} 1.5s 1s forwards;
     font-size: 25px;
-    @media (min-width: ${props => props.theme.media.s}) {
+    @media (min-width: ${mediaS}) {
       font-size: 30px;
     }
-    @media (min-width: ${props => props.theme.media.l}) {
+    @media (min-width: ${mediaL}) {
       font-size: 45px;
     }
     left: 50%;

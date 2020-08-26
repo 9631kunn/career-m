@@ -6,6 +6,7 @@ import "typeface-josefin-sans"
 
 const HeaderMenuLists = ({ open }) => {
   const media = props => props.theme.media.m
+  const fontEn = props => props.theme.fontEn
 
   const menus = [
     { ttl: "事業紹介", sub: "Our Works", link: "/test1" },
@@ -63,7 +64,7 @@ const HeaderMenuLists = ({ open }) => {
         }
       }
       span {
-        font-family: ${props => props.theme.fontEn};
+        font-family: ${fontEn};
         font-size: 13px;
         @media (min-width: ${media}) {
           font-size: 11px;
