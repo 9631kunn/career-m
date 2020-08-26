@@ -32,8 +32,8 @@ const Header = ({ location, siteTitle }) => {
       animation: ${gradAnimation} 3s infinite;
       background-image: linear-gradient(
         -150deg,
-        ${props => props.theme.color.main} 80%,
-        ${props => props.theme.color.sub} 100%
+        ${props => props.theme.color.sub} 80%,
+        ${props => props.theme.color.main} 100%
       );
       background-size: 600% 600%;
       bottom: 0;

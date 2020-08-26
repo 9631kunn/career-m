@@ -1,6 +1,7 @@
 import React from "react"
 
 import Section from "./Section"
+import Heading from "../Heading"
 
 import styled from "styled-components"
 
@@ -26,32 +27,18 @@ const TwoCol = () => {
         margin-block-end: 0;
         transform: translateX(5px);
       }
-      h2 {
-        color: ${props => props.theme.color.sub};
-      }
     }
     &.red {
-      background: ${props => props.theme.color.sub};
+      background: ${props => props.theme.color.main};
       color: #fff;
       z-index: 1;
       @media (min-width: ${props => props.theme.media.m}) {
         margin-block-start: 60px;
         transform: translateX(-5px);
       }
-    }
-    h2,
-    small {
-      text-align: center;
-    }
-    h2 {
-      font-family: ${props => props.theme.fontEn};
-      font-weight: 300;
-      text-transform: uppercase;
-    }
-    small {
-      display: block;
-      font-size: 12px;
-      margin-block-end: 20px;
+      > h2 {
+        color: #fff;
+      }
     }
     p {
       font-size: 14px;
@@ -62,8 +49,7 @@ const TwoCol = () => {
     <Section>
       <Wrap>
         <Box className="white">
-          <h2>Our Works</h2>
-          <small>転職をお考えの皆様へ</small>
+          <Heading main="Our Works" sub="転職をお考えの皆様へ" />
           <p>
             転職は戦略的に行動を起こしていかなければなりません。
             思い付きの転職、勢いだけの転職ではうまくいかないでしょう。
@@ -73,8 +59,11 @@ const TwoCol = () => {
           </p>
         </Box>
         <Box className="red">
-          <h2>Recruitment</h2>
-          <small>人材をお探しの企業様へ</small>
+          <Heading
+            main="Recruitment"
+            sub="人材をお探しの企業様へ"
+            mainColor="#fff"
+          />
           <p>
             「いい人材が見つからない」などのお悩みはございませんか?
             求人活動は、人が集まればいいというわけではありません。

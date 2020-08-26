@@ -6,6 +6,7 @@ import styled from "styled-components"
 
 const Feature = () => {
   const Wrap = styled.section`
+    padding-block-end: ${props => props.theme.gapY};
     position: relative;
     .feature {
       @media (min-width: ${props => props.theme.media.m}) {

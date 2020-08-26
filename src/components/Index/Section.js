@@ -6,9 +6,9 @@ const Section = ({ children }) => {
   const Wrap = styled.section`
     margin: 0 auto;
     max-width: ${props => props.theme.container};
-    padding: ${props => props.theme.gapY} ${props => props.theme.gapX};
+    padding: 0 ${props => props.theme.gapX} ${props => props.theme.gapY};
     @media (min-width: ${props => props.theme.media.m}) {
-      padding: ${props => props.theme.gapY} 0;
+      padding: 0 0 ${props => props.theme.gapY};
     }
   `
 

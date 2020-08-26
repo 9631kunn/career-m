@@ -5,6 +5,8 @@ import styled, { keyframes } from "styled-components"
 import "typeface-josefin-sans"
 
 const HeaderMenuLists = ({ open }) => {
+  const media = props => props.theme.media.m
+
   const menus = [
     { ttl: "事業紹介", sub: "Our Works", link: "/test1" },
     { ttl: "人材をお探しの企業様へ", sub: "Recruiter", link: "/test2" },
@@ -22,7 +24,7 @@ const HeaderMenuLists = ({ open }) => {
     animation: ${open && fadeIn} 0.25s forwards;
     margin: 30px 0;
     opacity: 0;
-    @media (min-width: ${props => props.theme.media.m}) {
+    @media (min-width: ${media}) {
       animation: none;
       display: inline-block;
       opacity: 1;
@@ -47,7 +49,7 @@ const HeaderMenuLists = ({ open }) => {
     }
     a {
       color: #fff;
-      @media (min-width: ${props => props.theme.media.m}) {
+      @media (min-width: ${media}) {
         color: inherit;
       }
       display: grid;
@@ -56,14 +58,14 @@ const HeaderMenuLists = ({ open }) => {
       p {
         font-size: 18px;
         font-weight: bold;
-        @media (min-width: ${props => props.theme.media.m}) {
+        @media (min-width: ${media}) {
           font-size: 14px;
         }
       }
       span {
         font-family: ${props => props.theme.fontEn};
         font-size: 13px;
-        @media (min-width: ${props => props.theme.media.m}) {
+        @media (min-width: ${media}) {
           font-size: 11px;
         }
       }

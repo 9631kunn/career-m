@@ -6,6 +6,7 @@ import styled, { keyframes } from "styled-components"
 
 const Hero = () => {
   const Wrap = styled.section`
+    padding-block-end: ${props => props.theme.gapY};
     position: relative;
     .hero {
       img {
