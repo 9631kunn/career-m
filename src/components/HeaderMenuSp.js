@@ -1,6 +1,6 @@
 import React, { useState } from "react"
 
-import HeaderMenuLists from "./HeaderMenuLists";
+import HeaderMenuLists from "./HeaderMenuLists"
 
 import styled, { keyframes } from "styled-components"
 
@@ -9,7 +9,7 @@ const HeaderMenuSp = () => {
 
   const SpMenu = styled.div`
     display: block;
-    @media (min-width: ${props => props.theme.media.m}){
+    @media (min-width: ${props => props.theme.media.m}) {
       display: none;
     }
     height: 26px; /* = logo's height */
@@ -26,14 +26,18 @@ const HeaderMenuSp = () => {
   `
 
   const Ham = styled.button`
-    background-image: linear-gradient( -150deg, ${props => props.theme.color.main} 30%, ${props => props.theme.color.sub} 100%);
+    background-image: linear-gradient(
+      -150deg,
+      ${props => props.theme.color.main} 30%,
+      ${props => props.theme.color.sub} 100%
+    );
     border-radius: 50%;
     display: inline-block;
     height: 100%;
     position: absolute;
     width: 100%;
-    z-index: 3;
-    span{
+    z-index: 60;
+    span {
       background: #fff;
       bottom: 0;
       display: inline-block;
@@ -44,11 +48,11 @@ const HeaderMenuSp = () => {
       right: 0;
       top: 0;
       width: 50%;
-      &:nth-of-type(1){
+      &:nth-of-type(1) {
         animation: ${open && firstBar} 0.3s forwards;
         transform: translateY(-3px);
       }
-      &:nth-of-type(2){
+      &:nth-of-type(2) {
         animation: ${open && secondBar} 0.3s forwards;
         transform: translateY(3px);
       }
@@ -64,7 +68,7 @@ const HeaderMenuSp = () => {
     position: fixed;
     top: 0;
     width: 100%;
-    z-index: 2;
+    z-index: 50;
   `
 
   const spread = keyframes`
@@ -73,7 +77,11 @@ const HeaderMenuSp = () => {
 
   const SpMenuListsBg = styled.div`
     animation: ${open && spread} 1s forwards;
-    background-image: linear-gradient( -150deg, ${props => props.theme.color.mainOp} 30%, ${props => props.theme.color.subOp} 100%);
+    background-image: linear-gradient(
+      -150deg,
+      ${props => props.theme.color.mainOp} 30%,
+      ${props => props.theme.color.subOp} 100%
+    );
     border-radius: 50%;
     display: ${open ? "block" : "none"};
     height: 2000px;
@@ -85,7 +93,7 @@ const HeaderMenuSp = () => {
     transform: scale(0.1);
     transition: 1s ease-in-out;
     width: 1900px;
-    z-index: 1;
+    z-index: 40;
   `
   return (
     <SpMenu>
@@ -97,7 +105,7 @@ const HeaderMenuSp = () => {
         <HeaderMenuLists open={open} />
       </SpMenuListsWrap>
       <SpMenuListsBg />
-    </SpMenu >
+    </SpMenu>
   )
 }
 
