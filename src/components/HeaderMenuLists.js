@@ -2,11 +2,9 @@ import React from "react"
 import { Link } from "gatsby"
 
 import styled, { keyframes } from "styled-components"
-import "typeface-josefin-sans";
+import "typeface-josefin-sans"
 
 const HeaderMenuLists = ({ open }) => {
-
-
   const menus = [
     { ttl: "事業紹介", sub: "Our Works", link: "/test1" },
     { ttl: "人材をお探しの企業様へ", sub: "Recruiter", link: "/test2" },
@@ -24,38 +22,48 @@ const HeaderMenuLists = ({ open }) => {
     animation: ${open && fadeIn} 0.25s forwards;
     margin: 30px 0;
     opacity: 0;
-    @media (min-width: ${props => props.theme.media.m}){
+    @media (min-width: ${props => props.theme.media.m}) {
       animation: none;
       display: inline-block;
       opacity: 1;
-      &:not(:last-child){
+      &:not(:last-child) {
         margin: 0 30px 0 0;
       }
     }
-    &:nth-of-type(1){ animation-delay: 0.6s; }
-    &:nth-of-type(2){ animation-delay: 0.7s; }
-    &:nth-of-type(3){ animation-delay: 0.8s; }
-    &:nth-of-type(4){ animation-delay: 0.9s; }
-    &:nth-of-type(5){ animation-delay: 1.1s; }
-    a{
+    &:nth-of-type(1) {
+      animation-delay: 0.6s;
+    }
+    &:nth-of-type(2) {
+      animation-delay: 0.7s;
+    }
+    &:nth-of-type(3) {
+      animation-delay: 0.8s;
+    }
+    &:nth-of-type(4) {
+      animation-delay: 0.9s;
+    }
+    &:nth-of-type(5) {
+      animation-delay: 1.1s;
+    }
+    a {
       color: #fff;
-      @media (min-width: ${props => props.theme.media.m}){
+      @media (min-width: ${props => props.theme.media.m}) {
         color: inherit;
       }
       display: grid;
       text-align: center;
       text-decoration: none;
-      p{
+      p {
         font-size: 18px;
         font-weight: bold;
-        @media (min-width: ${props => props.theme.media.m}){
+        @media (min-width: ${props => props.theme.media.m}) {
           font-size: 14px;
         }
       }
-      span{
+      span {
         font-family: ${props => props.theme.fontEn};
         font-size: 13px;
-        @media (min-width: ${props => props.theme.media.m}){
+        @media (min-width: ${props => props.theme.media.m}) {
           font-size: 11px;
         }
       }
@@ -70,7 +78,7 @@ const HeaderMenuLists = ({ open }) => {
             <p>{menu.ttl}</p>
             <span>{menu.sub}</span>
           </Link>
-        </MenuLists >
+        </MenuLists>
       ))}
     </>
   )

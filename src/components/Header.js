@@ -10,7 +10,9 @@ import styled, { keyframes } from "styled-components"
 const Header = ({ location, siteTitle }) => {
   const root = `${__PATH_PREFIX__}/`
   const Logo = (
-    <Image filename="logo.png" className="logo" alt={siteTitle + "ロゴ"} />
+    <Link to="/">
+      <Image filename="logo.png" className="logo" alt={siteTitle + "ロゴ"} />
+    </Link>
   )
 
   const gradAnimation = keyframes`
@@ -65,15 +67,7 @@ const Header = ({ location, siteTitle }) => {
   return (
     <Wrap>
       <Container>
-        {location.pathname === root ? (
-          <h1>
-            <Link to="/">{Logo}</Link>
-          </h1>
-        ) : (
-          <h3>
-            <Link to="/">{Logo}</Link>
-          </h3>
-        )}
+        {location.pathname === root ? <h1>{Logo}</h1> : <h3>{Logo}</h3>}
         <HeaderMenu />
       </Container>
     </Wrap>

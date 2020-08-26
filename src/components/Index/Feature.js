@@ -30,6 +30,7 @@ const Feature = () => {
   const Lead = styled.p`
     font-size: 14px;
     left: 50%;
+    max-width: ${props => props.theme.container};
     padding: 0 ${props => props.theme.gapX};
     position: absolute;
     text-shadow: 0 1px 10px hsl(0 100% 100% / 100%),
