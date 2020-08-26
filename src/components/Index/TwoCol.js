@@ -6,6 +6,9 @@ import Heading from "../Heading"
 import styled from "styled-components"
 
 const TwoCol = () => {
+  const gapY = props => props.theme.gapY
+  const media = props => props.theme.media.m
+
   const Wrap = styled.div`
     align-items: flex-start;
     display: flex;
@@ -13,17 +16,17 @@ const TwoCol = () => {
   `
 
   const Box = styled.div`
-    padding: 60px 30px;
+    padding: 60px ${gapY};
     position: relative;
     width: 100%;
-    @media (min-width: ${props => props.theme.media.m}) {
+    @media (min-width: ${media}) {
       width: 50%;
     }
     &.white {
       background: #fff;
-      margin-block-end: ${props => props.theme.gapY};
+      margin-block-end: ${gapY};
       z-index: 2;
-      @media (min-width: ${props => props.theme.media.m}) {
+      @media (min-width: ${media}) {
         margin-block-end: 0;
         transform: translateX(5px);
       }
@@ -32,7 +35,7 @@ const TwoCol = () => {
       background: ${props => props.theme.color.main};
       color: #fff;
       z-index: 1;
-      @media (min-width: ${props => props.theme.media.m}) {
+      @media (min-width: ${media}) {
         margin-block-start: 60px;
         transform: translateX(-5px);
       }

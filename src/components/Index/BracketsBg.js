@@ -4,17 +4,18 @@ import styled from "styled-components"
 
 const BracketsBg = ({ children }) => {
   const red = props => props.theme.color.main
+  const gapY = props => props.theme.gapY
 
   const Wrap = styled.div`
     background: #fff;
-    padding: 60px 30px;
+    padding: 60px ${gapY};
     position: relative;
     &::before,
     &::after {
       content: "";
       height: 60px;
       position: absolute;
-      width: 30px;
+      width: ${gapY};
     }
     &::before {
       border-left: 1px solid ${red};

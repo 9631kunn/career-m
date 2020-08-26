@@ -15,6 +15,8 @@ const variables = {
   gapX: "10px",
   gapY: "30px",
   fontEn: "'Josefin Sans', 'Arial',sans-serif",
+  fontGo:
+    "'Avenir','Helvetica Neue','Helvetica','Arial','Hiragino Sans','ヒラギノ角ゴシック',YuGothic,'Yu Gothic','メイリオ', Meiryo,'ＭＳ Ｐゴシック','MS PGothic',sans-serif",
 }
 
 export default variables

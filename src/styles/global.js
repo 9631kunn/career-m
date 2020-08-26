@@ -36,6 +36,9 @@ const Global = createGlobalStyle`
     padding: 0;
   }
 
+  address{
+    font-style: normal;
+  }
 
   @media (max-width: 768px){
     .sp__none{
