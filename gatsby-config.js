@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
     title: "キャリア未来図",
-    siteUrl: "https://hoge.com",
+    siteUrl: "https://career-m.com",
     description: "description from gatsby-config",
     // author: "@twitter",
     companyName: "キャリア未来図",
@@ -50,7 +50,7 @@ module.exports = {
         background_color: `#663399`,
         theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
+        icon: `src/images/favicon.png`, // This path is relative to the root of the site.
       },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality

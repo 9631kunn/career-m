@@ -7,7 +7,6 @@ import styled, { keyframes } from "styled-components"
 const media = props => props.theme.media.m
 const mainColor = props => props.theme.color.main
 const subColor = props => props.theme.color.sub
-const open = props => props.open
 const mainOp = props => props.theme.color.mainOp
 const subOp = props => props.theme.color.subOp
 
@@ -53,18 +52,18 @@ const Ham = styled.button`
     top: 0;
     width: 50%;
     &:nth-of-type(1) {
-      animation: ${open && firstBar} 0.3s forwards;
+      animation: ${props => props.open && firstBar} 0.3s forwards;
       transform: translateY(-3px);
     }
     &:nth-of-type(2) {
-      animation: ${open && secondBar} 0.3s forwards;
+      animation: ${props => props.open && secondBar} 0.3s forwards;
       transform: translateY(3px);
     }
   }
 `
 
 const SpMenuListsWrap = styled.ul`
-  display: ${open ? "block" : "none"};
+  display: ${props => (props.open ? "block" : "none")};
   height: 100vh;
   left: 0;
   list-style: none;
@@ -80,10 +79,10 @@ const spread = keyframes`
   `
 
 const SpMenuListsBg = styled.div`
-  animation: ${open && spread} 1s forwards;
+  animation: ${props => props.open && spread} 1s forwards;
   background-image: linear-gradient(-150deg, ${mainOp} 30%, ${subOp} 100%);
   border-radius: 50%;
-  display: ${open ? "block" : "none"};
+  display: ${props => (props.open ? "block" : "none")};
   height: 2000px;
   margin-block-start: -1000px;
   margin-inline-end: -1300px;
