@@ -7,6 +7,14 @@ exports.sourceNodes = ({ actions, createNodeId, createContentDigest }) => {
     { date: "2020-08-26", content: "testData3" },
   ]
 
+  const menus = [
+    { title: "事業紹介", sub: "Our Works", link: "/test1" },
+    { title: "人材をお探しの企業様へ", sub: "Recruiter", link: "/test2" },
+    { title: "求人", sub: "Recruitment", link: "/test3" },
+    { title: "会社情報", sub: "About us", link: "/test4" },
+    { title: "お問い合わせ", sub: "Get in touch", link: "/test5" },
+  ]
+
   news.forEach(n => {
     const node = {
       date: n.date,
@@ -17,6 +25,20 @@ exports.sourceNodes = ({ actions, createNodeId, createContentDigest }) => {
       internal: {
         type: "news",
         contentDigest: createContentDigest(n),
+      },
+    }
+    actions.createNode(node)
+  })
+
+  menus.forEach(m => {
+    const node = {
+      title: m.title,
+      sub: m.sub,
+      link: m.link,
+      id: createNodeId(`menu-${Math.floor(Math.random() * 1000000000)}`),
+      internal: {
+        type: "menus",
+        contentDigest: createContentDigest(m),
       },
     }
     actions.createNode(node)

@@ -8,6 +8,7 @@ import styled from "styled-components"
 const TwoCol = () => {
   const gapY = props => props.theme.gapY
   const media = props => props.theme.media.m
+  const shadow = props => props.theme.shadow
 
   const Wrap = styled.div`
     align-items: flex-start;
@@ -16,6 +17,7 @@ const TwoCol = () => {
   `
 
   const Box = styled.div`
+    box-shadow: ${shadow};
     padding: 60px ${gapY};
     position: relative;
     width: 100%;

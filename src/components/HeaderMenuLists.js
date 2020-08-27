@@ -1,5 +1,5 @@
 import React from "react"
-import { Link } from "gatsby"
+import { Link, useStaticQuery, graphql } from "gatsby"
 
 import styled, { keyframes } from "styled-components"
 import "typeface-josefin-sans"
@@ -8,13 +8,19 @@ const HeaderMenuLists = ({ open }) => {
   const media = props => props.theme.media.m
   const fontEn = props => props.theme.fontEn
 
-  const menus = [
-    { ttl: "事業紹介", sub: "Our Works", link: "/test1" },
-    { ttl: "人材をお探しの企業様へ", sub: "Recruiter", link: "/test2" },
-    { ttl: "求人", sub: "Recruitment", link: "/test3" },
-    { ttl: "会社情報", sub: "About us", link: "/test4" },
-    { ttl: "お問い合わせ", sub: "Get in touch", link: "/test5" },
-  ]
+  const { allMenus } = useStaticQuery(graphql`
+    query HeaderMenuListsQuery {
+      allMenus {
+        nodes {
+          title
+          sub
+          link
+        }
+      }
+    }
+  `)
+
+  const menus = allMenus.nodes
 
   const fadeIn = keyframes`
     0% { opacity: 0; transform: translateY(5px); }
@@ -78,7 +84,7 @@ const HeaderMenuLists = ({ open }) => {
       {menus.map(menu => (
         <MenuLists key={menu.link}>
           <Link to={menu.link}>
-            <p>{menu.ttl}</p>
+            <p>{menu.title}</p>
             <span>{menu.sub}</span>
           </Link>
         </MenuLists>

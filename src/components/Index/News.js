@@ -38,9 +38,13 @@ const News = () => {
         background: ${mainOp};
         border-radius: 3px;
         color: #fff;
-        font: 0.9em ${fontGo};
-        height: 20px;
+        font: 11px ${fontGo};
+        letter-spacing: 1px;
+        line-height: 20px;
         text-align: center;
+      }
+      p {
+        line-height: 20px;
       }
     }
   `
@@ -52,7 +56,7 @@ const News = () => {
         <NewsWrap>
           {allNews.nodes.map(n => (
             <li key={n.id}>
-              <time datetime={n.date}>{n.date}</time>
+              <time dateTime={n.date}>{n.date.replace(/-/g, "/")}</time>
               <p>{n.content}</p>
             </li>
           ))}

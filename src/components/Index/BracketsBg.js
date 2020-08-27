@@ -5,9 +5,12 @@ import styled from "styled-components"
 const BracketsBg = ({ children }) => {
   const red = props => props.theme.color.main
   const gapY = props => props.theme.gapY
+  const media = props => props.theme.media.m
+  const shadow = props => props.theme.shadow
 
   const Wrap = styled.div`
     background: #fff;
+    box-shadow: ${shadow};
     padding: 60px ${gapY};
     position: relative;
     &::before,
@@ -28,6 +31,8 @@ const BracketsBg = ({ children }) => {
       right: 0;
       border-bottom: 1px solid ${red};
       border-right: 1px solid ${red};
+    }
+    @media (min-width: ${media}) {
     }
   `
 
