@@ -22,8 +22,21 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
+        name: `pages`,
+        path: `${__dirname}/src/pages/`,
+      },
+      options: {
         name: `images`,
         path: `${__dirname}/src/images`,
+      },
+    },
+    {
+      resolve: `gatsby-plugin-mdx`,
+      options: {
+        extensions: [`.mdx`],
+        defaultLayouts: {
+          default: require.resolve("./src/components/Layout.js"),
+        },
       },
     },
     `gatsby-transformer-sharp`,

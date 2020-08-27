@@ -5,11 +5,11 @@ exports.sourceNodes = ({ actions, createNodeId, createContentDigest }) => {
 
   const menus = [
     { title: "ホーム", sub: "Home", link: "/" },
-    { title: "事業紹介", sub: "Our Works", link: "/test1" },
-    { title: "人材をお探しの企業様へ", sub: "Recruiter", link: "/test2" },
-    { title: "求人", sub: "Recruitment", link: "/test3" },
-    { title: "会社情報", sub: "About us", link: "/test4" },
-    { title: "お問い合わせ", sub: "Get in touch", link: "/test5" },
+    { title: "事業紹介", sub: "Our Works", link: "/our-works" },
+    { title: "人材をお探しの企業様へ", sub: "Recruiter", link: "/recruiter" },
+    { title: "求人", sub: "Recruitment", link: "/recruitment" },
+    { title: "会社情報", sub: "About us", link: "/about-us" },
+    { title: "お問い合わせ", sub: "Get in touch", link: "/get-in-touch" },
   ]
 
   news.forEach(n => {

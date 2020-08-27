@@ -8,23 +8,15 @@ import News from "../components/Index/News"
 import Access from "../components/Index/Access"
 import Info from "../components/Index/Info"
 
-import styled from "styled-components"
-
-const IndexPage = props => {
-  const Container = styled.div``
-
-  return (
-    <Layout location={props.location}>
-      <Container>
-        <Hero />
-        <TwoCol />
-        <Feature />
-        <News />
-        <Access />
-        <Info />
-      </Container>
-    </Layout>
-  )
-}
+const IndexPage = props => (
+  <Layout location={props.location}>
+    <Hero />
+    <TwoCol />
+    <Feature />
+    <News />
+    <Access />
+    <Info />
+  </Layout>
+)
 
 export default IndexPage

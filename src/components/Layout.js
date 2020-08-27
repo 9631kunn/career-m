@@ -11,6 +11,16 @@ import styled, { ThemeProvider } from "styled-components"
 import theme from "../styles/theme"
 import Global from "../styles/global"
 
+const Main = styled.main`
+  background: #ececec;
+  margin: auto;
+  max-width: 1200px;
+  @media (min-width: ${props => props.theme.media.l}) {
+    border-inline-start: 2px solid #ececec;
+    border-inline-end: 2px solid #ececec;
+  }
+`
+
 const Layout = ({ children, location }) => {
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
@@ -21,16 +31,6 @@ const Layout = ({ children, location }) => {
       }
     }
   `)
-
-  const Main = styled.main`
-    background: #ececec;
-    margin: auto;
-    max-width: 1200px;
-    @media (min-width: ${props => props.theme.media.l}){
-      border-inline-start: 2px solid #ececec;
-      border-inline-end: 2px solid #ececec;
-    }
-  `
 
   return (
     <ThemeProvider theme={theme}>

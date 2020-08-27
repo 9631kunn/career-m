@@ -5,51 +5,51 @@ import Heading from "../Heading"
 
 import styled from "styled-components"
 
-const TwoCol = () => {
-  const gapY = props => props.theme.gapY
-  const media = props => props.theme.media.m
-  const shadow = props => props.theme.shadow
+const gapY = props => props.theme.gapY
+const media = props => props.theme.media.m
+const shadow = props => props.theme.shadow
 
-  const Wrap = styled.div`
-    align-items: flex-start;
-    display: flex;
-    flex-wrap: wrap;
-  `
+const Wrap = styled.div`
+  align-items: flex-start;
+  display: flex;
+  flex-wrap: wrap;
+`
 
-  const Box = styled.div`
-    box-shadow: ${shadow};
-    padding: 60px ${gapY};
-    position: relative;
-    width: 100%;
+const Box = styled.div`
+  box-shadow: ${shadow};
+  padding: 60px ${gapY};
+  position: relative;
+  width: 100%;
+  @media (min-width: ${media}) {
+    width: 50%;
+  }
+  &.white {
+    background: #fff;
+    margin-block-end: ${gapY};
+    z-index: 2;
     @media (min-width: ${media}) {
-      width: 50%;
+      margin-block-end: 0;
+      transform: translateX(5px);
     }
-    &.white {
-      background: #fff;
-      margin-block-end: ${gapY};
-      z-index: 2;
-      @media (min-width: ${media}) {
-        margin-block-end: 0;
-        transform: translateX(5px);
-      }
+  }
+  &.red {
+    background: ${props => props.theme.color.main};
+    color: #fff;
+    z-index: 1;
+    @media (min-width: ${media}) {
+      margin-block-start: 60px;
+      transform: translateX(-5px);
     }
-    &.red {
-      background: ${props => props.theme.color.main};
+    > h2 {
       color: #fff;
-      z-index: 1;
-      @media (min-width: ${media}) {
-        margin-block-start: 60px;
-        transform: translateX(-5px);
-      }
-      > h2 {
-        color: #fff;
-      }
     }
-    p {
-      font-size: 14px;
-    }
-  `
+  }
+  p {
+    font-size: 14px;
+  }
+`
 
+const TwoCol = () => {
   return (
     <Section>
       <Wrap>
