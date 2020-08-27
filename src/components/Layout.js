@@ -11,11 +11,13 @@ import styled, { ThemeProvider } from "styled-components"
 import theme from "../styles/theme"
 import Global from "../styles/global"
 
+const media = props => props.theme.media.l
+
 const Main = styled.main`
   background: #ececec;
   margin: auto;
   max-width: 1200px;
-  @media (min-width: ${props => props.theme.media.l}) {
+  @media (min-width: ${media}) {
     border-inline-start: 2px solid #ececec;
     border-inline-end: 2px solid #ececec;
   }

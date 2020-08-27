@@ -8,6 +8,7 @@ const media = props => props.theme.media.m
 const fontEn = props => props.theme.fontEn
 const mainOp = props => props.theme.color.mainOp
 const subOp = props => props.theme.color.subOp
+const open = props => props.open
 
 const fadeIn = keyframes`
     0% { opacity: 0; transform: translateY(5px); }
@@ -20,7 +21,7 @@ const borderAnimation = keyframes`
   `
 
 const MenuLists = styled.li`
-  animation: ${props => props.open && fadeIn} 0.25s forwards;
+  animation: ${open && fadeIn} 0.25s forwards;
   margin: 30px 0;
   opacity: 0;
   text-align: center;

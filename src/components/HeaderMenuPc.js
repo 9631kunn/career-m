@@ -4,9 +4,11 @@ import HeaderMenuLists from "./HeaderMenuLists"
 
 import styled from "styled-components"
 
+const media = props => props.theme.media.m
+
 const PcMenu = styled.ul`
   display: none;
-  @media (min-width: ${props => props.theme.media.m}) {
+  @media (min-width: ${media}) {
     display: block;
   }
   list-style: none;

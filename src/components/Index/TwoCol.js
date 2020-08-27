@@ -8,6 +8,7 @@ import styled from "styled-components"
 const gapY = props => props.theme.gapY
 const media = props => props.theme.media.m
 const shadow = props => props.theme.shadow
+const mainColor = props => props.theme.color.main
 
 const Wrap = styled.div`
   align-items: flex-start;
@@ -33,7 +34,7 @@ const Box = styled.div`
     }
   }
   &.red {
-    background: ${props => props.theme.color.main};
+    background: ${mainColor};
     color: #fff;
     z-index: 1;
     @media (min-width: ${media}) {

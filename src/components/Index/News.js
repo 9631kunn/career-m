@@ -10,9 +10,10 @@ import "typeface-josefin-sans"
 
 const mainOp = props => props.theme.color.mainOp
 const fontGo = props => props.theme.fontGo
+const news = props => props.news
 
 const NewsWrap = styled.ul`
-  height: ${props => (props.news.length > 3 ? "100px" : "auto")};
+  height: ${news.length > 3 ? "100px" : "auto"};
   list-style: none;
   margin: auto;
   max-width: 600px;
