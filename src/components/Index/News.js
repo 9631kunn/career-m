@@ -11,10 +11,11 @@ import "typeface-josefin-sans"
 const News = () => {
   const { allNews } = useStaticQuery(graphql`
     query newsComponentQuery {
-      allNews {
+      allNews(limit: 5, sort: { fields: date, order: DESC }) {
         nodes {
-          date
           content
+          id
+          date
         }
       }
     }
@@ -24,13 +25,15 @@ const News = () => {
   const fontGo = props => props.theme.fontGo
 
   const NewsWrap = styled.ul`
+    height: 150px;
     list-style: none;
+    overflow-y: scroll;
     li {
       align-items: center;
       display: grid;
       gap: 15px;
       grid-template-columns: 80px 1fr;
-      margin-block-end: 15px;
+      margin-block-end: 10px;
       time {
         background: ${mainOp};
         border-radius: 3px;
@@ -48,7 +51,7 @@ const News = () => {
         <Heading main="News" sub="新着情報" />
         <NewsWrap>
           {allNews.nodes.map(n => (
-            <li>
+            <li key={n.id}>
               <time datetime={n.date}>{n.date}</time>
               <p>{n.content}</p>
             </li>

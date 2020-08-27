@@ -73,7 +73,7 @@ const Access = () => {
 
   const MapWrap = styled.div`
     height: 0;
-    padding-top: 75%;
+    padding-top: 35%;
     position: relative;
     width: 100%;
     @media (min-width: ${media}) {

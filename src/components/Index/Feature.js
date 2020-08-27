@@ -15,6 +15,7 @@ const Feature = () => {
     padding-block-end: ${gapY};
     position: relative;
     .feature {
+      filter: blur(2px);
       @media (min-width: ${mediaM}) {
         height: 300px;
         img {
