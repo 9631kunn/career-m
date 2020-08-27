@@ -21,12 +21,18 @@ const News = () => {
     }
   `)
 
+  const news = allNews.nodes
+
+  console.log(news.length)
+
   const mainOp = props => props.theme.color.mainOp
   const fontGo = props => props.theme.fontGo
 
   const NewsWrap = styled.ul`
-    height: 150px;
+    height: ${news.length > 3 ? "100px" : "auto"};
     list-style: none;
+    margin: auto;
+    max-width: 600px;
     overflow-y: scroll;
     li {
       align-items: center;
@@ -39,7 +45,7 @@ const News = () => {
         border-radius: 3px;
         color: #fff;
         font: 11px ${fontGo};
-        letter-spacing: 1px;
+        letter-spacing: 1.5px;
         line-height: 20px;
         text-align: center;
       }
@@ -54,7 +60,7 @@ const News = () => {
       <BracketsBg>
         <Heading main="News" sub="新着情報" />
         <NewsWrap>
-          {allNews.nodes.map(n => (
+          {news.map(n => (
             <li key={n.id}>
               <time dateTime={n.date}>{n.date.replace(/-/g, "/")}</time>
               <p>{n.content}</p>

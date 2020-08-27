@@ -25,8 +25,24 @@ const FooterMenuLists = () => {
     li {
       a {
         color: #fff;
+        display: inline-block;
         font-size: 12px;
+        position: relative;
         text-decoration: none;
+        &::after {
+          background: #fff;
+          bottom: -4px;
+          content: "";
+          display: inline-block;
+          height: 1px;
+          left: 0;
+          position: absolute;
+          transition: 0.5s;
+          width: 0;
+        }
+        &:hover::after {
+          width: 100%;
+        }
         span {
           font: 100 12px ${fontEn};
           margin-inline-start: 1em;

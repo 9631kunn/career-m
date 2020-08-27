@@ -10,7 +10,7 @@ const Hero = () => {
   const mediaS = props => props.theme.media.s
 
   const Wrap = styled.section`
-    padding-block-end: ${gapY};
+    margin-block-end: ${gapY}; /* 絶対値で中央寄せにpadding非推奨 */
     position: relative;
     .hero {
       img {

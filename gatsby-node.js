@@ -1,13 +1,10 @@
 // Ref: https://www.gatsbyjs.com/docs/recipes/sourcing-data/
 
 exports.sourceNodes = ({ actions, createNodeId, createContentDigest }) => {
-  const news = [
-    { date: "2020-08-24", content: "testData1" },
-    { date: "2020-08-25", content: "testData2" },
-    { date: "2020-08-26", content: "testData3" },
-  ]
+  const news = [{ date: "2020-09-01", content: "公式HPを開設しました" }]
 
   const menus = [
+    { title: "ホーム", sub: "Home", link: "/" },
     { title: "事業紹介", sub: "Our Works", link: "/test1" },
     { title: "人材をお探しの企業様へ", sub: "Recruiter", link: "/test2" },
     { title: "求人", sub: "Recruitment", link: "/test3" },
