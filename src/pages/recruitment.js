@@ -5,8 +5,7 @@ import PagesContainer from "../components/PagesContainer"
 
 const RecruitmentPage = props => (
   <Layout location={props.location}>
-    <PagesContainer>
-      <h1>求人情報</h1>
+    <PagesContainer title="求人情報">
       <p>ここにテキスト</p>
     </PagesContainer>
   </Layout>

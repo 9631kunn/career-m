@@ -5,8 +5,7 @@ import PagesContainer from "../components/PagesContainer"
 
 const OurWorksPage = props => (
   <Layout location={props.location}>
-    <PagesContainer>
-      <h1>事業紹介</h1>
+    <PagesContainer title="事業紹介">
       <p>ここにテキスト</p>
     </PagesContainer>
   </Layout>

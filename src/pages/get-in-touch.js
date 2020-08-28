@@ -5,8 +5,7 @@ import PagesContainer from "../components/PagesContainer"
 
 const GetInTouchPage = props => (
   <Layout location={props.location}>
-    <PagesContainer>
-      <h1>お問い合わせ</h1>
+    <PagesContainer title="お問い合わせ">
       <p>ここにテキスト</p>
     </PagesContainer>
   </Layout>
