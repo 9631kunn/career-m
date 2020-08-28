@@ -1,6 +1,7 @@
 import React from "react"
 
 import FooterMenuLists from "./FooterMenuLists"
+import FooterContact from "./FooterContact"
 
 import styled from "styled-components"
 import "typeface-josefin-sans"
@@ -23,15 +24,37 @@ const Container = styled.div`
   margin: auto;
   max-width: ${media};
   width: 100%;
-  h2 {
-    border-block-end: 1px solid #fff;
-    color: #fff;
-    display: inline-block;
-    font-family: ${fontEn};
-    font-weight: 300;
-    margin-block-end: 10px;
-    padding-block-end: 10px;
+  &.col{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
   }
+`
+
+const Col = styled.div`
+  &:nth-of-type(1){
+    margin-block-end: ${gapY};
+  }
+  width: 100%;
+  @media (min-width: ${media}){
+    width: 50%;
+  }
+`
+
+const MenuTitle = styled.h2`
+  border-block-end: 1px solid #fff;
+  color: #fff;
+  display: inline-block;
+  font-family: ${fontEn};
+  font-weight: 300;
+  margin-block-end: 10px;
+  padding-block-end: 10px;
+`
+
+const CopyRight = styled.div`
+  background: ${mainDark};
+  padding: 20px;
+  width: 100%;
   small {
     color: #fff;
     display: block;
@@ -40,19 +63,18 @@ const Container = styled.div`
   }
 `
 
-const CopyRight = styled.div`
-  background: ${mainDark};
-  padding: 20px;
-  width: 100%;
-`
-
 const Footer = () => {
   return (
     <>
       <Wrap>
-        <Container>
-          <h2>Menus</h2>
-          <FooterMenuLists />
+        <Container className="col">
+          <Col>
+            <MenuTitle>Menus</MenuTitle>
+            <FooterMenuLists />
+          </Col>
+          <Col>
+            <FooterContact />
+          </Col>
         </Container>
       </Wrap>
       <CopyRight>
