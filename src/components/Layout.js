@@ -13,14 +13,15 @@ import theme from "../styles/theme"
 import Global from "../styles/global"
 
 const media = props => props.theme.media.l
+const light = "#F8FAFD"
 
 const Main = styled.main`
-  background: #ececec;
+  background: ${light};
   margin: auto;
   max-width: 1200px;
   @media (min-width: ${media}) {
-    border-inline-start: 2px solid #ececec;
-    border-inline-end: 2px solid #ececec;
+    border-inline-start: 2px solid ${light};
+    border-inline-end: 2px solid ${light};
   }
 `
 
