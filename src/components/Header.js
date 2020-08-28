@@ -69,7 +69,7 @@ const Header = ({ location, siteTitle }) => {
   )
 
   return (
-    <Wrap>
+    <Wrap id="header">
       <Container>
         {location.pathname === root ? <h1>{Logo}</h1> : <h3>{Logo}</h3>}
         <HeaderMenu />

@@ -6,6 +6,7 @@ import CompanyJson from "./JsonLd/Company"
 import SiteJson from "./JsonLd/Site"
 import Header from "./Header"
 import Footer from "./Footer"
+import GoToTop from "./GoToTop"
 
 import styled, { ThemeProvider } from "styled-components"
 import theme from "../styles/theme"
@@ -42,6 +43,7 @@ const Layout = ({ children, location }) => {
       <Header location={location} siteTitle={data.site.siteMetadata.title} />
       <Main>{children}</Main>
       <Footer />
+      <GoToTop />
     </ThemeProvider>
   )
 }
