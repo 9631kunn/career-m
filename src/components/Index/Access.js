@@ -7,7 +7,7 @@ import Heading from "../Heading"
 
 import styled from "styled-components"
 
-import postalCodeIcon from "../../images/postalCode.svg"
+import postalCodeIcon from "../../icon/postalCode.svg"
 
 const gapY = props => props.theme.gapY
 const media = props => props.theme.media.m

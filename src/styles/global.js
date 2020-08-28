@@ -14,13 +14,13 @@ const Global = createGlobalStyle`
   }
   html {
     color: #444;
-    font-family: 'Yu Mincho Light','YuMincho','Yu Mincho','游明朝体',sans-serif;
     scroll-behavior: smooth;
   }
   body {
+    font-family: '游明朝','Yu Mincho','YuMincho','Hiragino Mincho ProN','Hiragino Mincho Pro','HGS明朝E','メイリオ','Meiryo',serif;
+    line-height: 1.5;
     min-height: 100vh;
     text-rendering: optimizeSpeed;
-    line-height: 1.5;
   }
 
 
