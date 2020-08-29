@@ -6,6 +6,7 @@ import pagesStyle from "../styles/pages"
 
 const container = props => props.theme.container
 const shadow = props => props.theme.shadow
+const media = props => props.theme.media.m
 const gapX = props => props.theme.gapX
 const gapY = props => props.theme.gapY
 
@@ -25,14 +26,16 @@ const Title = styled.h1`
 
 const Container = styled.div`
   margin: auto;
-  max-width: ${container};
-  padding-block-start: 180px;
+  max-width: calc(${container} + 20px); /* 子要素の横幅を980にするため */
+  padding: 180px 10px 0;
+  @media (min-widht: ${media}) {
+    padding: 180px 0 0;
+  }
 `
 
 const Content = styled.div`
   background: #fff;
   box-shadow: ${shadow};
-  height: 100vh;
   margin-block-start: ${gapY};
   padding: ${gapY} ${gapX};
   ${pagesStyle}

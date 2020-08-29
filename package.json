@@ -5,6 +5,7 @@
   "version": "0.1.0",
   "author": "9631kunn",
   "dependencies": {
+    "@material-ui/core": "^4.11.0",
     "@mdx-js/mdx": "^1.6.16",
     "@mdx-js/react": "^1.6.16",
     "babel-plugin-styled-components": "^1.11.1",

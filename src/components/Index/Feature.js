@@ -1,27 +1,20 @@
 import React from "react"
 
-import Image from "../Image"
-
 import styled from "styled-components"
 
-const mediaM = props => props.theme.media.m
 const mediaS = props => props.theme.media.s
 const gapY = props => props.theme.gapY
 const gapX = props => props.theme.gapX
 const container = props => props.theme.container
 
 const Wrap = styled.section`
-  padding-block-end: ${gapY};
+  background: url("/assets/bg.jpg");
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+  height: 300px;
+  margin-block-end: ${gapY};
   position: relative;
-  .feature {
-    filter: blur(2px);
-    @media (min-width: ${mediaM}) {
-      height: 300px;
-      img {
-        object-position: 100% 100% !important;
-      }
-    }
-  }
 `
 
 const Catch = styled.h2`
@@ -54,14 +47,9 @@ const Lead = styled.p`
 
 const Feature = () => (
   <Wrap>
-    <Image
-      filename="bg.jpg"
-      className="feature"
-      alt={"キャリアの未来図を皆様と一緒に描きたい"}
-    />
     <Catch>"転職"のその先へ</Catch>
     <Lead>
-      ここにテキストここにテキストここにテキストここにテキストここにテキスト
+      転職はゴールではありません。スタートラインです。新たな環境でキャリアを積み重ね、あなたの未来図が作れるようサポートいたします。
     </Lead>
   </Wrap>
 )

@@ -40,6 +40,10 @@ const Global = createGlobalStyle`
     font-style: normal;
   }
 
+  img{
+    max-width: 100%;
+  }
+
   @media (max-width: 768px){
     .sp__none{
       display: none;

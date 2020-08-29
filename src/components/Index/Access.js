@@ -76,7 +76,8 @@ const Access = () => {
 
   const map = (
     <iframe
-      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3241.8829922950927!2d139.75265675103572!3d35.655254338906026!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188bc7b38a1e61%3A0xb4c496458316ea20!2z44CSMTA1LTAwMTMg5p2x5Lqs6YO95riv5Yy65rWc5p2-55S677yS5LiB55uu77yS4oiS77yR77yVIDJG!5e0!3m2!1sja!2sjp!4v1598428855820!5m2!1sja!2sjp"
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3243.6392409193536!2d139.7399056156549!3d35.61196458021063!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188a7aaa7fd0f5%3A0xcf955bc3ea46597!2z44CSMTQwLTAwMDQg5p2x5Lqs6YO95ZOB5bed5Yy65Y2X5ZOB5bed77yS5LiB55uu77yS4oiS77yVIOODquODvOODieOCt-ODvOWNl-WTgeW3neODk-ODqw!5e0!3m2!1sja!2sjp!4v1598673753343!5m2!1sja!2sjp"
+      title={title}
       width="600"
       height="450"
       frameBorder="0"
@@ -84,7 +85,6 @@ const Access = () => {
       allowFullScreen=""
       aria-hidden="false"
       loading="lazy"
-      title={title}
     />
   )
 
@@ -99,6 +99,7 @@ const Access = () => {
               mainAlign="left"
               subAlign="left"
             />
+            <strong>人材紹介事業部</strong>
             <address>
               <span>{postalCode}</span>
               <br />
