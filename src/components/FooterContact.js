@@ -1,6 +1,8 @@
 import React from "react"
 import { Link } from "gatsby"
 
+import Image from "./Image"
+
 import styled from "styled-components"
 
 const mainColor = props => props.theme.color.main
@@ -14,26 +16,30 @@ const Wrap = styled.address`
   padding: ${gapY} ${gapX};
   text-align: center;
   width: 100%;
-  p{
+  .logo {
+    margin: 0 auto 20px;
+    width: 250px;
+  }
+  p {
     color: #fff;
     margin-block-end: 20px;
   }
-  button{
+  button {
     background: #fff;
     border-radius: 30px;
     font-family: ${fontEn};
     padding: 0.75em 3.5em;
     transition: 0.5s;
-    a{
+    a {
       color: ${mainColor};
       font-size: 1em;
       letter-spacing: 3px;
       text-decoration: none;
       transition: 0.5s;
     }
-    &:hover{
+    &:hover {
       background: ${mainColor};
-      a{
+      a {
         color: #fff;
       }
     }
@@ -42,8 +48,10 @@ const Wrap = styled.address`
 
 const FooterContact = () => (
   <Wrap>
-    <p>Logo #fff</p>
-    <button><Link to="/get-in-touch">CONTACT</Link></button>
+    <Image filename="logo-w.png" className="logo" />
+    <button>
+      <Link to="/get-in-touch">CONTACT</Link>
+    </button>
   </Wrap>
 )
 
