@@ -38,6 +38,9 @@ const Content = styled.div`
   box-shadow: ${shadow};
   margin-block-start: ${gapY};
   padding: ${gapY} ${gapX};
+  @media (min-width: ${media}) {
+    padding: ${gapY};
+  }
   ${pagesStyle}
 `
 
