@@ -8,10 +8,8 @@ const gapX = props => props.theme.gapX
 const container = props => props.theme.container
 
 const Wrap = styled.section`
-  background: url("/assets/bg.jpg");
+  background: url("/assets/bg.jpg") no-repeat center center / cover;
   background-attachment: fixed;
-  background-position: center;
-  background-size: cover;
   height: 300px;
   margin-block-end: ${gapY};
   position: relative;
@@ -46,7 +44,7 @@ const Lead = styled.p`
 `
 
 const Feature = () => (
-  <Wrap>
+  <Wrap id="ftr">
     <Catch>"転職"のその先へ</Catch>
     <Lead>
       転職はゴールではありません。スタートラインです。新たな環境でキャリアを積み重ね、あなたの未来図が作れるようサポートいたします。
