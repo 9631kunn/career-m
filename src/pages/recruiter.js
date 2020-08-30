@@ -43,7 +43,8 @@ const RecruiterPage = props => (
     <Form
       src="https://career-m.co.jp/_form/recruiter/"
       title="求人をお探しの企業様"
-      height="800_"
+      height="600" // error message用にやや大きく
+      spHeight="1100" // error message用にやや大きく
     />
   </Layout>
 )

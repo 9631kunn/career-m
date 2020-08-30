@@ -1,6 +1,7 @@
 import React from "react"
 
 import Layout from "../components/Layout"
+import Image from "../components/Image"
 import PagesContainer from "../components/PagesContainer"
 
 const works = [
@@ -27,6 +28,7 @@ const OurWorksPage = props => (
       <p>
         規模にしても件数にしても大手には全くかないません。だからこそ、じっくり時間をかけ、スキルや性格、人生観も含めきちんと理解し、社会に貢献できる人材をご紹介差し上げます。入社のあとも、その方の気持ちのフォーローはもちろんのこと、事業活動のサポートや情報提供などをいろいろな角度から支援を致します。
       </p>
+      <Image filename="01_our-works.jpg" />
     </PagesContainer>
   </Layout>
 )
