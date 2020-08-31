@@ -4,6 +4,7 @@ import Form from "../components/Form"
 import Image from "../components/Image"
 import Layout from "../components/Layout"
 import PagesContainer from "../components/PagesContainer"
+import RecruitmentJson from "../components/JsonLd/Recruitment"
 
 import styled from "styled-components"
 
@@ -31,6 +32,7 @@ const Col = styled.div`
 
 const RecruitmentPage = props => (
   <Layout location={props.location}>
+    <RecruitmentJson />
     <PagesContainer title="求人情報">
       <Col>
         <Image filename="01_recruitment.jpg" className="fig" />

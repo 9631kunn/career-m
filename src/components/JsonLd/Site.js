@@ -21,26 +21,26 @@ const SiteJson = () => {
     siteUrl,
     description,
     companyName,
-    copyrightYear
+    copyrightYear,
   } = data.site.siteMetadata
 
   const json = {
     "@context": "http://schema.org",
     "@type": "website",
-    "name": title,
-    "inLanguage": "jp",
-    "publisher": {
+    name: title,
+    inLanguage: "jp",
+    publisher: {
       "@type": "Organization",
-      "name": companyName,
-      // "logo": {
-      //   "@type": "ImageObject",
-      //   "url": `${siteUrl}/assets/logo.png`,
-      // }
+      name: companyName,
+      logo: {
+        "@type": "ImageObject",
+        url: `${siteUrl}/assets/logo.png`,
+      },
     },
-    "copyrightYear": copyrightYear,//コピーライトの日付
-    "headline": title,
-    "description": description,
-    "url": siteUrl
+    copyrightYear: copyrightYear, //コピーライトの日付
+    headline: title,
+    description: description,
+    url: siteUrl,
   }
 
   return (
