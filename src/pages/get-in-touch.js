@@ -6,7 +6,7 @@ import PagesContainer from "../components/PagesContainer"
 
 const GetInTouchPage = props => (
   <Layout location={props.location}>
-    <PagesContainer title="お問い合わせ">
+    <PagesContainer title="お問い合わせ" pathname={props.location.pathname}>
       <p>
         お気軽にお問い合わせください。メッセージ確認後、担当者から返信いたします。
       </p>

@@ -17,7 +17,7 @@ const works = [
 
 const OurWorksPage = props => (
   <Layout location={props.location}>
-    <PagesContainer title="事業紹介">
+    <PagesContainer title="事業紹介" pathname={props.location.pathname}>
       <h2>人材のご紹介</h2>
       <ul>
         {works.map(w => (

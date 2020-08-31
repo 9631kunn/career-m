@@ -1,5 +1,7 @@
 import React from "react"
+import Helmet from "react-helmet"
 import Particles from "react-particles-js"
+import { useStaticQuery, graphql } from "gatsby"
 
 import styled from "styled-components"
 import pagesStyle from "../styles/pages"
@@ -44,9 +46,24 @@ const Content = styled.div`
   ${pagesStyle}
 `
 
-const PagesContainer = ({ children, title }) => {
+const PagesContainer = ({ children, title, pathname }) => {
+  const data = useStaticQuery(graphql`
+    query PagesContainerQuery {
+      site {
+        siteMetadata {
+          siteUrl
+        }
+      }
+    }
+  `)
+
+  const { siteUrl } = data.site.siteMetadata
+
   return (
     <Wrap>
+      <Helmet>
+        <link rel="canonical" href={siteUrl + pathname} />
+      </Helmet>
       <Title>{title}</Title>
       <Particles
         width="100%"

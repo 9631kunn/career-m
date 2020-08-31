@@ -31,7 +31,10 @@ const Col = styled.div`
 
 const RecruiterPage = props => (
   <Layout location={props.location}>
-    <PagesContainer title="人材をお探しの企業様">
+    <PagesContainer
+      title="人材をお探しの企業様"
+      pathname={props.location.pathname}
+    >
       <Col>
         <p className="text">
           もし人材確保にお悩みなら、キャリア未来図にお任せ下さい。貴社のニーズに沿った、最適と思われる人材をご紹介させて頂きます。
