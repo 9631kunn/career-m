@@ -1,5 +1,7 @@
 import React from "react"
 
+import Image from "../Image"
+
 import styled, { keyframes } from "styled-components"
 
 const gapY = props => props.theme.gapY
@@ -10,6 +12,15 @@ const mainOp = props => props.theme.color.mainOp
 const Wrap = styled.section`
   margin-block-end: ${gapY}; /* 絶対値で中央寄せにつきpadding非推奨 */
   position: relative;
+  .hero::before {
+    backdrop-filter: blur(3px);
+    content: "";
+    display: inline-block;
+    height: 100%;
+    position: absolute;
+    width: 100%;
+    z-index: 1;
+  }
 `
 
 const fadeIn = keyframes`
@@ -34,11 +45,16 @@ const Catch = styled.h2`
   transform: translateX(-50%) translateY(-50%);
   opacity: 0;
   white-space: nowrap;
+  z-index: 2;
 `
 
 const Hero = () => (
   <Wrap>
-    <img src="/assets/hero.jpg" loading="lazy" alt="ファーストビューイメージ" />
+    <Image
+      filename="fv.jpg"
+      className="hero"
+      alt={"キャリアの未来図を皆様と一緒に描きたい"}
+    />
     <Catch>
       キャリアの未来図を
       <br className="pc__none" />

@@ -1,5 +1,7 @@
 import React from "react"
 
+import Image from "../Image"
+
 import styled from "styled-components"
 
 const mediaS = props => props.theme.media.s
@@ -8,11 +10,26 @@ const gapX = props => props.theme.gapX
 const container = props => props.theme.container
 
 const Wrap = styled.section`
-  background: url("/assets/bg.jpg") no-repeat center center / cover;
-  background-attachment: fixed;
-  height: 300px;
   margin-block-end: ${gapY};
   position: relative;
+  .feature {
+    height: 250px;
+    @media (min-width: ${mediaS}) {
+      height: 300px;
+      img {
+        object-position: 100% 100% !important;
+      }
+    }
+    &::before {
+      backdrop-filter: blur(3px);
+      content: "";
+      display: inline-block;
+      height: 100%;
+      position: absolute;
+      width: 100%;
+      z-index: 1;
+    }
+  }
 `
 
 const Catch = styled.h2`
@@ -23,6 +40,7 @@ const Catch = styled.h2`
   top: 30px;
   transform: translateX(-50%);
   white-space: nowrap;
+  z-index: 2;
 `
 
 const Lead = styled.p`
@@ -38,13 +56,19 @@ const Lead = styled.p`
   ); /* h2's start position + h2's line-height + gap */
   transform: translateX(-50%);
   width: 100%;
+  z-index: 3;
   @media (min-width: ${mediaS}) {
     text-align: center;
   }
 `
 
 const Feature = () => (
-  <Wrap id="ftr">
+  <Wrap>
+    <Image
+      filename="men.jpg"
+      className="feature"
+      alt={"キャリアの未来図を皆様と一緒に描きたい"}
+    />
     <Catch>"転職"のその先へ</Catch>
     <Lead>
       転職はゴールではありません。スタートラインです。新たな環境でキャリアを積み重ね、あなたの未来図が作れるようサポートいたします。

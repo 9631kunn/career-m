@@ -14,9 +14,9 @@ const pagesStyle = css`
   }
   ul {
     list-style: none;
-    padding-inline-start: 30px;
     li {
       line-height: 1.5;
+      padding-inline-start: 30px;
       position: relative;
       &:before {
         background: ${color};
@@ -24,10 +24,9 @@ const pagesStyle = css`
         content: "";
         display: inline-block;
         height: 10px;
-        left: -20px;
+        left: 0;
         position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
+        top: 7px;
         width: 10px;
       }
     }

@@ -4,6 +4,10 @@ import Layout from "../components/Layout"
 import Image from "../components/Image"
 import PagesContainer from "../components/PagesContainer"
 
+import styled from "styled-components"
+
+import arrowIcon from "../icon/down-arrow.svg"
+
 const works = [
   "現在の労働市場の概要説明",
   "転職に関するカウンセリング",
@@ -15,13 +19,35 @@ const works = [
   "入社に際してのアドバイス ・入社後のフォロー",
 ]
 
+const media = props => props.theme.media.s
+
+const List = styled.li`
+  padding-block-end: 50px;
+  position: relative;
+  &:not(:last-of-type)::after {
+    background: url(${arrowIcon}) no-repeat;
+    bottom: 10px;
+    content: "";
+    display: inline-block;
+    height: 30px;
+    left: 50%;
+    position: absolute;
+    transform: translateX(-50%);
+    width: 30px;
+    @media (min-width: ${media}) {
+      left: 30px;
+      transform: none;
+    }
+  }
+`
+
 const OurWorksPage = props => (
   <Layout location={props.location}>
     <PagesContainer title="事業紹介" pathname={props.location.pathname}>
       <h2>人材のご紹介</h2>
       <ul>
         {works.map(w => (
-          <li>{w}</li>
+          <List>{w}</List>
         ))}
       </ul>
       <p>当社は、社員に適正だと思われる人材のご紹介をさせていただきます。</p>
