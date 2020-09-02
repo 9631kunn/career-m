@@ -5,9 +5,9 @@ const variables = {
     l: "1200px",
   },
   color: {
-    main: "#E84F42",
+    main: "#d14336",
     mainOp: "rgba(232, 79, 66, 0.8)",
-    mainDark: "#d4473b",
+    mainDark: "#C9382B",
     sub: "#F49829",
     subOp: "rgba(244, 152, 41, 0.8)",
   },

@@ -31,9 +31,9 @@ const Col = styled.div`
 `
 
 const RecruitmentPage = props => (
-  <Layout location={props.location}>
+  <Layout location={props.location} titleTag="求人情報">
     <RecruitmentJson />
-    <PagesContainer title="求人情報" pathname={props.location.pathname}>
+    <PagesContainer title="求人情報">
       <Col>
         <Image filename="01_recruitment.jpg" className="fig" />
         <p className="text">

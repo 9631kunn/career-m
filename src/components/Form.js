@@ -19,9 +19,9 @@ const Form = ({ title, src, height, spHeight }) => {
         src={src}
         title={title}
         width="100%"
-        frameborder="0"
-        marginheight="0"
-        marginwidth="0"
+        frameBorder="0"
+        marginHeight="0"
+        marginWidth="0"
         loading="lazy"
       >
         読み込んでいます…

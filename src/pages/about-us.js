@@ -64,20 +64,20 @@ const data = [
 ]
 
 const AboutUsPage = props => (
-  <Layout location={props.location}>
-    <PagesContainer title="会社情報" pathname={props.location.pathname}>
+  <Layout location={props.location} titleTag="会社情報">
+    <PagesContainer title="会社情報">
       <Table>
         <tbody>
           {data.map(d => (
-            <>
+            <tr key={d.th}>
               {d.th !== "所在地" && (
-                <tr key={d.id}>
+                <>
                   <th>{d.th}</th>
                   <td>{d.td}</td>
-                </tr>
+                </>
               )}
               {d.th === "所在地" && (
-                <tr key={d.id}>
+                <>
                   <th>{d.th}</th>
                   <td>
                     <strong>本社</strong>
@@ -97,9 +97,9 @@ const AboutUsPage = props => (
                     <p>〒140-0004</p>
                     <p>東京都品川区南品川2-2-5 リードシー南品川ビル2F</p>
                   </td>
-                </tr>
+                </>
               )}
-            </>
+            </tr>
           ))}
         </tbody>
       </Table>

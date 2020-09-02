@@ -100,7 +100,11 @@ const HeaderMenuSp = () => {
 
   return (
     <SpMenu>
-      <Ham onClick={() => setOpen(!open)} open={open}>
+      <Ham
+        aria-label="ハンバーガーメニュー"
+        onClick={() => setOpen(!open)}
+        open={open}
+      >
         <span />
         <span />
       </Ham>

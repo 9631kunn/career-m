@@ -24,7 +24,7 @@ const media = props => props.theme.media.s
 const List = styled.li`
   padding-block-end: 50px;
   position: relative;
-  &:not(:last-of-type)::after {
+  &:not(:last-of-type):after {
     background: url(${arrowIcon}) no-repeat;
     bottom: 10px;
     content: "";
@@ -42,12 +42,12 @@ const List = styled.li`
 `
 
 const OurWorksPage = props => (
-  <Layout location={props.location}>
-    <PagesContainer title="事業紹介" pathname={props.location.pathname}>
+  <Layout location={props.location} titleTag="事業紹介">
+    <PagesContainer title="事業紹介">
       <h2>人材のご紹介</h2>
       <ul>
         {works.map(w => (
-          <List>{w}</List>
+          <List key={w}>{w}</List>
         ))}
       </ul>
       <p>当社は、社員に適正だと思われる人材のご紹介をさせていただきます。</p>

@@ -17,7 +17,8 @@ const Main = styled.h2`
 
 const Sub = styled.small`
   display: block;
-  font-size: 12px;
+  font-size: 14px;
+  font-weight: bold;
   margin-block-end: 20px;
   text-align: ${subAlign};
 `

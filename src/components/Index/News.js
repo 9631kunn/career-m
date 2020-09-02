@@ -8,7 +8,7 @@ import Heading from "../Heading"
 import styled from "styled-components"
 import "typeface-josefin-sans"
 
-const mainOp = props => props.theme.color.mainOp
+const main = props => props.theme.color.main
 const fontGo = props => props.theme.fontGo
 const news = props => props.news
 
@@ -25,7 +25,7 @@ const NewsWrap = styled.ul`
     grid-template-columns: 80px 1fr;
     margin-block-end: 10px;
     time {
-      background: ${mainOp};
+      background: ${main};
       border-radius: 3px;
       color: #fff;
       font: 11px ${fontGo};

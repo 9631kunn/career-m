@@ -1,7 +1,9 @@
 import React from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
+import Helmet from "react-helmet"
 
+import SEO from "./SEO"
 import CompanyJson from "./JsonLd/Company"
 import SiteJson from "./JsonLd/Site"
 import Header from "./Header"
@@ -25,23 +27,32 @@ const Main = styled.main`
   }
 `
 
-const Layout = ({ children, location }) => {
+const Layout = ({ children, location, titleTag }) => {
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
       site {
         siteMetadata {
           title
+          siteUrl
         }
       }
     }
   `)
 
+  const { siteUrl, title } = data.site.siteMetadata
+  const canonical =
+    location.pathname === "/" ? siteUrl : siteUrl + location.pathname
+
   return (
     <ThemeProvider theme={theme}>
+      <SEO titleTag={titleTag} location={location} />
+      <Helmet>
+        <link rel="canonical" href={canonical} />
+      </Helmet>
       <Global />
       <CompanyJson />
       <SiteJson />
-      <Header location={location} siteTitle={data.site.siteMetadata.title} />
+      <Header location={location} siteTitle={title} />
       <Main>{children}</Main>
       <Footer />
       <GoToTop />
