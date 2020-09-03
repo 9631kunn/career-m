@@ -18,6 +18,7 @@ const Wrap = styled.div`
   @media (min-width: ${mediaL}){
     right: 15vw;
   }
+  z-index: 999;
   button::before{
     background-image: url(${UpIcon});
     content: "";
